@@ -55,18 +55,49 @@
 ////////////////////////////////////
 // Lecutre: Blocks and IIFEs
 
-{
-    const a =1;
-    let b = 2;
-    var c = 3
+// {
+//     const a =1;
+//     let b = 2;
+//     var c = 3
+// }
+
+// // console.log(a + b);
+// console.log(c);
+
+// // ES5 IIFE
+// (function() {
+//     var c = 3
+// })();
+
+// console.log(c); // Error
+
+////////////////////////////////////
+// Lecutre: Strings
+
+let firstName = 'John';
+let lastName = 'Smith';
+const yearOfBirth = 1990;
+
+function calcAge(year) {
+    return 2016 - year;
 }
 
-// console.log(a + b);
-console.log(c);
+// ES5 String
+console.log('This is ' + firstName + ' ' + lastName + '. He was born in ' + yearOfBirth + '. Today he is ' + calcAge(yearOfBirth) + ' years old.');
 
-// ES5 IIFE
-(function() {
-    var c = 3
-})();
+// ES6 Template literal
+console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today he is ${calcAge(yearOfBirth)} years old.`);
 
-console.log(c); // Error
+const n = `${firstName} ${lastName}`;
+
+// startsWith
+console.log(n.startsWith('J'));
+
+// endsWith
+console.log(n.endsWith('h'));
+
+// includes
+console.log(n.includes(' '));
+
+// repeat
+console.log(`${firstName} `.repeat(5));
