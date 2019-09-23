@@ -1,3 +1,4 @@
+////////////////////////////////////
 // Lecutre: let and const
 
 // // ES5
@@ -41,10 +42,31 @@
 // driverLicence(true);
 
 
-var i = 23;
+// var i = 23;
 
-for (var i = 0; i < 5; i++) {
-    console.log(i);
+// for (var i = 0; i < 5; i++) {
+//     console.log(i);
+// }
+
+// console.log(i);
+
+
+
+////////////////////////////////////
+// Lecutre: Blocks and IIFEs
+
+{
+    const a =1;
+    let b = 2;
+    var c = 3
 }
 
-console.log(i);
+// console.log(a + b);
+console.log(c);
+
+// ES5 IIFE
+(function() {
+    var c = 3
+})();
+
+console.log(c); // Error
