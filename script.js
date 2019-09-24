@@ -196,19 +196,57 @@ const box6 = {
 
 
 // ES6
-function Person(name) {
-    this.name = name;
+// function Person(name) {
+//     this.name = name;
+// }
+
+// Person.prototype.myFriends6 = (friends) => {
+//     var arr = friends.map(
+//         (el) => {
+//             return `${this.name} is friends with ${el}`;
+//         }
+//     );
+//     console.log(arr);
+// }
+
+// var friends = ['Bob', 'Linda', 'Tina'];
+
+// const John = new Person('John').myFriends6(friends);
+
+
+
+////////////////////////////////////
+// Lecutre: Destructuring
+
+// ES5
+// var john = ['John', 26];
+// var name = john[0];
+// var age = john[1];
+
+// ES6
+// const[name, age] = ['John', 26];
+// console.log(name, age);
+
+// const obj = {
+//     firstName: 'John',
+//     age: 26
+// }
+
+// const{firstName, age} = obj; // Deconstructing values outside obj
+// console.log(age);
+
+// // Using new names
+// const{firstName: a, age: b} = obj; // Deconstructing values outside obj
+// console.log(b);
+
+
+// ES5
+function calcAgeRetirement(year) {
+    const age = new Date().getFullYear() - year;
+    return [age, 65 - age];
 }
 
-Person.prototype.myFriends6 = (friends) => {
-    var arr = friends.map(
-        (el) => {
-            return `${this.name} is friends with ${el}`;
-        }
-    );
-    console.log(arr);
-}
+const [age2, retirement] = calcAgeRetirement(1990);
 
-var friends = ['Bob', 'Linda', 'Tina'];
-
-const John = new Person('John').myFriends6(friends);
+console.log(age2);
+console.log(retirement);
