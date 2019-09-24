@@ -149,16 +149,16 @@
 // box5.clickMe();
 
 // ES6
-const box6 = {
-    color: 'green',
-    position: 1,
-    clickMe: function() {
-        document.querySelector('.green').addEventListener('click', () => {
-            var str = 'This is box number ' + this.position + ' and it is ' + this.color;
-            alert(str); 
-        });
-    }
-}
+// const box6 = {
+//     color: 'green',
+//     position: 1,
+//     clickMe: function() {
+//         document.querySelector('.green').addEventListener('click', () => {
+//             var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+//             alert(str); 
+//         });
+//     }
+// }
 
 // box6.clickMe();
 
@@ -241,12 +241,73 @@ const box6 = {
 
 
 // ES5
-function calcAgeRetirement(year) {
-    const age = new Date().getFullYear() - year;
-    return [age, 65 - age];
-}
+// function calcAgeRetirement(year) {
+//     const age = new Date().getFullYear() - year;
+//     return [age, 65 - age];
+// }
 
-const [age2, retirement] = calcAgeRetirement(1990);
+// const [age2, retirement] = calcAgeRetirement(1990);
 
-console.log(age2);
-console.log(retirement);
+// console.log(age2);
+// console.log(retirement);
+
+
+
+//////////////////////////////////////////////
+// Arrays
+
+// ES5
+// var boxes = document.querySelectorAll('.box');
+
+// var boxesArr5 = Array.prototype.slice.call(boxes);
+// console.log(boxesArr5);
+
+// boxesArr5.forEach(function(element) {
+//     element.style.backgroundColor = 'dodgerblue';
+// });
+
+// ES6
+// const boxesArr6 = Array.from(boxes);
+// Array.from(boxes).forEach(cur => {
+//     cur.style.backgroundColor = 'dodgerblue';
+// });
+
+
+// ES5
+// for (var i = 0; i < boxesArr5.length; i++) {
+
+//     if (boxesArr5[i].className === 'box blue') {
+//         continue
+//     }
+
+//     boxesArr5[i].textContent = 'I changed to blue!';
+
+// }
+
+
+// ES6
+// for (const cur of boxesArr6) {
+//     if (cur.className.includes('blue')) {
+//         continue;
+//     }
+//     cur.textContent = "I changed blue";
+// }
+
+
+//ES5
+var ages = [12, 17, 8, 21, 14, 11];
+
+var ofAge = ages.map(function(i) {
+    return i >= 18;
+});
+
+console.log(ofAge);
+
+console.log(ofAge.indexOf(true));
+
+console.log(ages[ofAge.indexOf(true)]);
+
+//ES6
+console.log(ages.findIndex(i => i >= 18));
+
+console.log(ages.find(i => i >= 18));
