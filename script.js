@@ -295,19 +295,59 @@
 
 
 //ES5
-var ages = [12, 17, 8, 21, 14, 11];
+// var ages = [12, 17, 8, 21, 14, 11];
 
-var ofAge = ages.map(function(i) {
-    return i >= 18;
-});
+// var ofAge = ages.map(function(i) {
+//     return i >= 18;
+// });
 
-console.log(ofAge);
+// console.log(ofAge);
 
-console.log(ofAge.indexOf(true));
+// console.log(ofAge.indexOf(true));
 
-console.log(ages[ofAge.indexOf(true)]);
+// console.log(ages[ofAge.indexOf(true)]);
+
+// //ES6
+// console.log(ages.findIndex(i => i >= 18));
+
+// console.log(ages.find(i => i >= 18));
+
+
+
+//////////////////////////////////////////////
+// The Spread Operator
+
+function addFourNumbers (a, b, c, d) {
+    return a + b + c + d;
+};
+
+sum1 = addFourNumbers(18, 30, 12, 21);
+console.log(sum1);
+
+//ES5
+var ages = [18, 30, 12, 21];
+
+var sum2 = addFourNumbers.apply(null, ages);
+console.log(sum2);
 
 //ES6
-console.log(ages.findIndex(i => i >= 18));
+const sum3 = addFourNumbers(...ages);
+console.log(sum3);
 
-console.log(ages.find(i => i >= 18));
+
+const familySmith = ['John', 'Jane', 'Mark'];
+const familyMiller = ['Mary', 'Bob', 'Ann'];
+const bigFamily = [...familySmith, 'Lily', ...familyMiller];
+console.log(bigFamily);
+
+
+const h = document.querySelector('h1');
+const boxes = document.querySelectorAll('.box');
+const all = [h,...boxes];
+console.log(all);
+
+
+Array.from(all).forEach(element => {
+    element.style.color = 'purple';
+});
+// all.style.color = 'green';
